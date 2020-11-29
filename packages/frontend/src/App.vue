@@ -2,12 +2,14 @@
   <div>
     <Hero />
     <InputGroup />
+    <UrlsList />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Hero from './components/Hero.vue';
+import UrlsList from './components/UrlsList.vue';
 import InputGroup from './components/InputGroup.vue';
 
 export default defineComponent({
@@ -15,6 +17,7 @@ export default defineComponent({
   components: {
     Hero,
     InputGroup,
+    UrlsList,
   },
 });
 </script>
