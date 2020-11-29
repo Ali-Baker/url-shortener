@@ -1,7 +1,10 @@
 <template>
   <div>
+    <span class="space"></span>
     <Hero />
+    <span class="space"></span>
     <InputGroup />
+    <span class="space"></span>
     <UrlsList />
   </div>
 </template>
@@ -38,8 +41,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   max-width: 1200px;
   width: 100%;
+}
+
+span.space {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: block;
 }
 </style>
