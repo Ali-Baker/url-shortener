@@ -35,7 +35,7 @@ form {
 input {
   border: 4px var(--var-yellow-color) solid;
   border-radius: 5px 0 0 5px;
-  width: 70%;
+  width: calc(100% - 24px);
   height: 26px;
   padding: 8px;
   outline: none;
