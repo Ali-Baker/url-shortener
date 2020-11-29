@@ -14,12 +14,12 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    "max-len": [
-      "error",
-      { "code": 100, "tabWidth": 2, ignorePattern: 'd="([\\s\\S]*?)"' },
+    'max-len': [
+      'error',
+      { code: 100, tabWidth: 2, ignorePattern: 'd="([\\s\\S]*?)"' },
     ],
-    "quotes": [2, "single", { "avoidEscape": true }],
-    "indent": ["error", 2],
+    quotes: [2, 'single', { avoidEscape: true }],
+    indent: ['error', 2],
   },
   overrides: [
     {
