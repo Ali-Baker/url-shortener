@@ -12,4 +12,8 @@ const Api = axios.create({
 
 export const all = () => Api.get('/all');
 
+export const shorten = (fullUrl: string) => Api.post('/shorten', {
+  fullUrl,
+});
+
 export default {};

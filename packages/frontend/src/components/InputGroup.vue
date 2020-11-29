@@ -1,15 +1,27 @@
 <template>
-  <div>
-    <input type="text" />
-    <button @click.prevent="shorten">Shorten</button>
-  </div>
+  <form @submit.prevent="shorten">
+    <input type="text" name="shortenUrlInput" v-model="inputValue" />
+    <button type="submit">Shorten</button>
+  </form>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
+  data() {
+    return {
+      inputValue: '',
+    };
+  },
   methods: {
-    shorten() {
-      console.log('hello');
+    ...mapActions(['postNewUrl']),
+
+    shorten(sumbitEvent) {
+      const fullUrl = sumbitEvent.target.elements.shortenUrlInput.value;
+      this.postNewUrl(fullUrl).then(() => {
+        this.inputValue = '';
+      });
     },
   },
 };

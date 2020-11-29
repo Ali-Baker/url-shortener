@@ -7,26 +7,25 @@
 </template>
 
 <script>
-import { all } from '../api';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'UrlsList',
   data() {
     return {
-      urls: [],
       loading: false,
       errorMessage: '',
     };
   },
+  computed: {
+    ...mapState(['urls']),
+  },
+  methods: {
+    ...mapActions(['getAllUrls']),
+  },
   created() {
     this.loading = true;
-    all().then((responce) => {
-      this.loading = false;
-      this.urls = responce.data;
-    }).catch((error) => {
-      this.loading = false;
-      this.errorMessage = error.message;
-    });
+    this.getAllUrls();
   },
 };
 </script>

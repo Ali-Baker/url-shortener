@@ -13,14 +13,17 @@ const shortUrlValidator = async (req, res, next) => {
     const shortUrlId = crc32(req.body.fullUrl);
     const shortUrl = await ShortUrl.findOne({ _id: shortUrlId });
     if (shortUrl) {
-      res.json(shortUrl)
+      res.json({
+        ...shortUrl,
+        duplicate: true,
+      })
     } else {
       next();
     }
   }
 }
 
-router.post('/shortUrls', shortUrlValidator,  async (req, res) => {
+router.post('/shorten', shortUrlValidator,  async (req, res) => {
   const shortUrl = crc32(req.body.fullUrl);
   const url = await ShortUrl.create({ 
     full: req.body.fullUrl,
