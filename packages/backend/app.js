@@ -8,7 +8,7 @@ const indexRouter = require('./routes/index');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/urlShortener', {
+mongoose.connect('mongodb://mongo/urlShortener', {
   useNewUrlParser: true, useUnifiedTopology: true
 })
 
