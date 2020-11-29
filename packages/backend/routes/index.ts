@@ -1,10 +1,10 @@
-const express = require('express');
-const router = express.Router();
-const crc32 = require('crc32')
+import express, { Request, Response, NextFunction } from 'express';
 
+const crc32 = require('crc32');
+const router = express.Router();
 const ShortUrl = require('../models/ShortUrl');
 
-const shortUrlValidator = async (req, res, next) => {
+const shortUrlValidator = async (req: Request, res: Response, next: NextFunction) => {
   if(!req.body.fullUrl) {
     res.send({
       message: 'fullUrl is required!'
@@ -18,12 +18,12 @@ const shortUrlValidator = async (req, res, next) => {
         duplicate: true,
       })
     } else {
-      next();
+      // next();
     }
   }
 }
 
-router.post('/shorten', shortUrlValidator,  async (req, res) => {
+router.post('/shorten', shortUrlValidator,  async (req: Request, res: Response) => {
   const shortUrl = crc32(req.body.fullUrl);
   const url = await ShortUrl.create({ 
     full: req.body.fullUrl,
@@ -35,7 +35,7 @@ router.post('/shorten', shortUrlValidator,  async (req, res) => {
   res.json(url);
 });
 
-router.get('/all', async (req, res) => {
+router.get('/all', async (req: Request, res: Response) => {
   const all = await ShortUrl.find({});
 
   res.json(all);

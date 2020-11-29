@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+import app from '../app';
 var debug = require('debug')('backend:server');
 var http = require('http');
 
@@ -33,7 +33,7 @@ server.on('listening', onListening);
  * Normalize a port into a number, string, or false.
  */
 
-function normalizePort(val) {
+function normalizePort(val: string) {
   var port = parseInt(val, 10);
 
   if (isNaN(port)) {
@@ -53,7 +53,10 @@ function normalizePort(val) {
  * Event listener for HTTP server "error" event.
  */
 
-function onError(error) {
+function onError(error: {
+  syscall: string;
+  code: string;
+}) {
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -67,11 +70,9 @@ function onError(error) {
     case 'EACCES':
       console.error(bind + ' requires elevated privileges');
       process.exit(1);
-      break;
     case 'EADDRINUSE':
       console.error(bind + ' is already in use');
       process.exit(1);
-      break;
     default:
       throw error;
   }
