@@ -6,14 +6,19 @@ function truncate(str: string, n: number): string {
 }
 
 export type Getters = {
-  getFullUrls(state: State): any[];
+  getFormatedlUrls(state: State): any[];
+  getFormattedAndSortedUrls(state: State): any[];
 }
 
 export const getters: GetterTree<State, State> & Getters = {
-  getFullUrls(state: State) {
+  getFormatedlUrls(state) {
     return state.urls.map((url: any) => ({
       ...(url as object),
       full: truncate(url.full || '', 100),
+      short: `https://pbid.io/${url.short}`,
     }));
+  },
+  getFormattedAndSortedUrls(state) {
+    return getters.getFormatedlUrls(state).sort((a, b) => b.timestamp - a.timestamp);
   },
 };

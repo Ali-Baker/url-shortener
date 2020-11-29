@@ -29,6 +29,8 @@ export default defineComponent({
 :root {
   --var-yellow-color: #FFBC42;
   --var-black-color: black;
+  --var-white-color: white;
+  --var-blue-color: #12428E;
 }
 
 body {

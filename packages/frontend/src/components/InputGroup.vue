@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style scopped>
+<style scoped>
 form {
   position: relative;
 }

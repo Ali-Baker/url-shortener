@@ -28,7 +28,8 @@ router.post('/shorten', shortUrlValidator,  async (req, res) => {
   const url = await ShortUrl.create({ 
     full: req.body.fullUrl,
     short: shortUrl,
-    _id: shortUrl
+    _id: shortUrl,
+    timestamp: Date.now(),
   });
 
   res.json(url);

@@ -20,6 +20,10 @@ const shortUrlSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  timestamp: {
+    type: Number,
+    required: true,
+  }
 });
 
 module.exports = mongoose.model('ShortUrl', shortUrlSchema);
