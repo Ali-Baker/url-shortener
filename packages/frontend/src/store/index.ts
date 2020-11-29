@@ -8,13 +8,13 @@ import {
 import { all } from '../api';
 
 import { State, state } from './state';
-// import { Getters, getters } from './getters';
+import { Getters, getters } from './getters';
 import { Mutations, mutations } from './mutations';
 import { Actions, actions } from './actions';
 
 const store = createStore({
   state,
-  // getters,
+  getters,
   mutations,
   actions,
 });
