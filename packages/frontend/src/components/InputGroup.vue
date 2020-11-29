@@ -33,7 +33,7 @@ form {
 }
 
 input {
-  border: 4px #FFBC42 solid;
+  border: 4px var(--var-yellow-color) solid;
   border-radius: 5px 0 0 5px;
   width: 70%;
   height: 26px;
@@ -42,10 +42,10 @@ input {
 }
 
 button {
-  border: 4px #FFBC42 solid;
+  border: 4px var(--var-yellow-color) solid;
   border-radius: 0 5px 5px 0;
-  background-color: #FFBC42;
-  color: black;
+  background-color: var(--var-yellow-color);
+  color: var(--var-black-color);
   height: 50px;
   width: 20%;
   font-size: 20px;

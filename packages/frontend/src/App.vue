@@ -23,6 +23,11 @@ export default defineComponent({
 </script>
 
 <style>
+:root {
+  --var-yellow-color: #FFBC42;
+  --var-black-color: black;
+}
+
 body {
   width: 100wh;
   display: flex;
