@@ -31,4 +31,10 @@ router.post('/shortUrls', shortUrlValidator,  async (req, res) => {
   res.json(url);
 });
 
+router.get('/all', async (req, res) => {
+  const all = await ShortUrl.find({});
+
+  res.json(all);
+});
+
 module.exports = router;
