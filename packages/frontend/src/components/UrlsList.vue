@@ -1,7 +1,7 @@
 <template>
   <table v-if="getFormattedAndSortedUrls.length > 0">
     <tr>
-      <th>Url</th>
+      <th class="wide">Url</th>
       <th>Short Url</th>
       <th>Actions</th>
   </tr>
@@ -66,8 +66,26 @@ export default {
 
 <style scoped>
 
+@media only screen and (max-width: 930px) {
+  a {
+    padding: 0 !important;
+  }
+
+  .wide a {
+    max-width: 100px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .wide a,
+  .wide {
+    display: none !important;
+  }
+}
+
 table {
   width: 100%;
+  max-width: 100vw;
   border: 2px var(--var-yellow-color) solid;
   border-radius: 10px;
   padding: 20px 10px;
@@ -78,14 +96,6 @@ table {
   padding-right: 20px;
   display: block;
   word-wrap: break-word;
-}
-
-.narrow a{
-  min-width: 200px;
-}
-
-.wide a{
-  min-width: 500px;
 }
 
 .copy {
