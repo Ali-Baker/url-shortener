@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "crc32": "^0.2.2",
     "debug": "~2.6.9",
     "express": "~4.16.1",
