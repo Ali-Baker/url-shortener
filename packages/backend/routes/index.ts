@@ -18,7 +18,7 @@ const shortUrlValidator = async (req: Request, res: Response, next: NextFunction
         duplicate: true,
       })
     } else {
-      // next();
+      next();
     }
   }
 }
