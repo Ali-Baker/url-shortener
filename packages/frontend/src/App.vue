@@ -23,12 +23,18 @@ export default defineComponent({
 </script>
 
 <style>
+body {
+  width: 100wh;
+  display: flex;
+  justify-content: center;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 50px;
+  max-width: 1200px;
+  width: 100%;
 }
 </style>
