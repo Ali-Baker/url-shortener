@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express';
+import { isValidUrl } from '../helpers/common';
 
 const crc32 = require('crc32');
 const router = express.Router();
@@ -6,9 +7,15 @@ const ShortUrl = require('../models/ShortUrl');
 
 const shortUrlValidator = async (req: Request, res: Response, next: NextFunction) => {
   if(!req.body.fullUrl) {
+    res.status(400);
     res.send({
       message: 'fullUrl is required!'
-    }).status(400);
+    });
+  } else if (!isValidUrl(req.body.fullUrl)) {
+    res.status(400);
+    res.send({
+      message: 'URL is not valid'
+    });
   } else {
     const shortUrlId = crc32(req.body.fullUrl);
     const shortUrl = await ShortUrl.findOne({ _id: shortUrlId });
