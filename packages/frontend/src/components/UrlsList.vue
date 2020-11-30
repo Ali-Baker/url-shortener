@@ -1,4 +1,5 @@
 <template>
+  <h1>Urls List</h1>
   <table v-if="getFormattedAndSortedUrls.length > 0">
     <tr>
       <th class="wide">Url</th>
@@ -83,10 +84,14 @@ export default {
   }
 }
 
+h1 {
+  text-align: left;
+}
+
 table {
   width: 100%;
   max-width: 100vw;
-  border: 2px var(--var-yellow-color) solid;
+  border: 3px var(--var-yellow-color) solid;
   border-radius: 10px;
   padding: 20px 10px;
   text-align: left;
