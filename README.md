@@ -11,3 +11,19 @@ To view the design online [click here](https://www.figma.com/file/pZ1UxOWeVQVXcJ
 
 ## Colour Palette
 <img src="docs/colours.png" alt="colours" width="350"/>
+
+# Installation
+
+## Dev
+
+You need both `docker` & `docker-compose` up and running. Then run this command.
+
+`~$ docker-compose up`
+
+# To Do
+
+- [ ] Testing
+- [ ] Production `docker-compose`
+- [ ] Improve documentation
+- [ ] Display Urls List for each unique user
+- [ ] Add CI
