@@ -10,4 +10,4 @@ To view the design online [click here](https://www.figma.com/file/pZ1UxOWeVQVXcJ
 ![frontend](docs/main.png)
 
 ## Colour Palette
-![colours](docs/colours.png =250x)
+<img src="docs/colours.png" alt="colours" width="350"/>
